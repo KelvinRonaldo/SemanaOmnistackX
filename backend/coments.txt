@@ -1,0 +1,27 @@
+const express = require("express");
+const mongoose = require("mongoose");
+
+const app = express();
+
+mongoose.connect("mongodb+srv://kelvinOmniStack:omnistack@cluster0-dank0.mongodb.net/week10?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	 useUnifiedTopology: true
+});
+
+//use - FAZ COM QUE A SUA CONFIGURAÇÃO SEJA VALIDA À TODOS OS METODOS HTTP
+app.use(express.json());
+//Tipos de Parâmetros
+
+// Query params: request.query(Filtros, ordenação, paginação, ...)
+// Route params: request.params(Identificar um recurso na alteração ou remoção)
+// Body: request.body (Dados para criação ou alteração de um registro)
+
+//MongoDB (Não relacional)
+
+//OS PARÂMETROS DE ROTA SÃO DESIGNADOS NELA POR ':'
+app.post("/users", (request, response) =>{
+	console.log(request.body);
+	return response.json({message: "Fala Fiote, ta bom"});
+});
+
+app.listen(3333);
