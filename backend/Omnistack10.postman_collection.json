@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "55850ae6-9b6e-43dd-84a2-9b5b0fac7764",
+		"name": "Omnistack10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Dev",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"github_username\": \"PedroDeAlmeidaSantos\",\r\n\t\"techs\": \"React, Node, Native\",\r\n\t\"latitude\": -23.5696249,\r\n\t\"longitude\": -46.8349725\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/devs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"devs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Devs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/devs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"devs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Devs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/search?latitude=-23.5696249&longitude=-46.8349725&techs=ReactJS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "-23.5696249"
+						},
+						{
+							"key": "longitude",
+							"value": "-46.8349725"
+						},
+						{
+							"key": "techs",
+							"value": "ReactJS"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
